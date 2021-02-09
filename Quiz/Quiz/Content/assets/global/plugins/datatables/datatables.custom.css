@@ -1,0 +1,27 @@
+﻿.portlet.light .dataTables_wrapper .dt-buttons {
+    margin: 0 0 0 10px;
+}
+
+.dataTables_wrapper .dt-buttons {
+    float: right;
+}
+
+div.dt-buttons {
+    position: relative;
+    float: right;
+}
+
+a.dt-button:last-child, button.dt-button:last-child, div.dt-button:last-child {
+    margin-right: 0px;
+}
+
+table.dataTable thead th, table.dataTable thead td {
+     padding: 10px 10px; 
+}
+
+.dataTables_filter
+{
+    float:right;
+}
+
+

@@ -1,0 +1,91 @@
+﻿@model Survey.Models.AssignSurvey
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Assign Surveys</h2>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+    function MoveListBoxItem(fromId, toId) {
+        $("#" + fromId + " option:selected").remove().appendTo("#" + toId);
+    }
+</script>
+
+<div class="container">
+    @using (Html.BeginForm("Index", "AssignSurvey"))
+    {
+        <br />
+        <br />
+        <table class="table table-bordered" style="width:60%">
+
+            <tbody>
+                <tr>
+                 
+                    <td colspan="3">Select Survey:&nbsp; @Html.DropDownList("Surveylist", (IEnumerable<SelectListItem>)ViewBag.Surveylist, "--Select--")</td>
+                   
+                </tr>
+                @*<tr>
+                        <td colspan="3">Select Users:&nbsp;&nbsp;&nbsp; @Html.DropDownList("UsersRoleList", (IEnumerable<SelectListItem>)ViewBag.UsersRoleList, "--All--", new { Class = "ddlStyle", onchange = "UsersRole_SelectedIndexChanged()" })</td>
+
+                    </tr>*@
+                <tr>
+                    <td rowspan="4">
+                        @Html.ListBox("UnSelectedItem", new SelectList(Model.UserUnSelectedList, "UserId", "FullName"), new { @style = "width:500px;height:300px" })
+                    </td>
+                    <td></td>
+                    <td colspan="2" rowspan="4">
+                        @Html.ListBoxFor(m => m.SelectedUserID, new SelectList(Model.UserSelectedList, "UserId", "FullName" ), new { @style = "width:500px;height:300px" } )
+                    </td>
+                </tr>
+                <tr>
+
+                    <td style="width:20px"> <input class="btn btn-info" type="button" value="&#62&#62"  onclick="javascript: MoveListBoxItem('UnSelectedItem', 'SelectedUserID')" /></td>
+
+                </tr>
+                <tr>
+
+                    <td><input class="btn btn-info" type="button" value="<<" onclick="javascript: MoveListBoxItem('SelectedUserID', 'UnSelectedItem')" /></td>
+
+                </tr>
+                <tr>
+
+                    <td></td>
+
+                </tr>
+                <tr>
+
+                    <td colspan="3"><button class="btn btn-info"  id="btnAssign" oncl>Assign</button></td>
+                   
+                </tr>
+                    </tbody>
+                    </table>
+
+    }
+</div>
+<script type="text/javascript">
+    $(function () {
+
+        $("#btnAssign").click(function () {
+            var LstRight = $("#SelectedUserID")
+            var Surveylist = $("#Surveylist");
+
+            if (Surveylist.val() == "") {
+                //If the "Please Select" option is selected display error.
+                alert("Please select Survey from Drop down!");
+                return false;
+            }
+            if (LstRight.find('option').length<=0) {
+                //If the "Please Select" option is selected display error.
+                alert("Please Assign atleast One User in the right box by Clicking >> Button !");
+                return false;
+            }
+            return true;
+
+           
+            
+        });
+                 
+    });
+
+</script>
+

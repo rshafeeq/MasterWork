@@ -1,0 +1,58 @@
+﻿@model System.Data.DataTable
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Surveys </h2>
+<br />
+
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="table-responsive">
+            <table class="table-bordered  table table-condensed">
+                <thead>
+                    <tr>
+                        <th>Survey Title </th>
+                        <th>Survey Title Arabic</th>
+                        <th>Survey Description </th>
+                        <th>Survey Description Arabic</th>
+
+
+                    </tr>
+                </thead>
+               
+                <tbody>
+                    @for (int i = 0; i < Model.Rows.Count; i++)
+                    {
+                        <tr class="info">
+                            <td>
+                            <button class="btn btn-success">
+                            <a href="@Url.Action("Index","SurveyQuestions",new{@id=Model.Rows[i]["SurveyID"]})?surveyid=@Model.Rows[i]["SurveyID"]&Title=@Model.Rows[i]["SurveyTitle"]" style="color: white !important">@Model.Rows[i]["SurveyTitle"] </a>
+
+                                </button>
+                        </td>
+                            <td>
+                        <button class="btn btn-success">
+                        <a href="@Url.Action("Index","SurveyQuestionsArabic",new{@id=Model.Rows[i]["SurveyID"]})?surveyid=@Model.Rows[i]["SurveyID"]&Title=@Model.Rows[i]["SurveyTitleArabic"]" style="color: white !important">@Model.Rows[i]["SurveyTitleArabic"] </a>
+                        </button>
+                        </td>
+                            <td>@Model.Rows[i]["SurveyDescriptionEnglish"]  </td>
+                            <td>@Model.Rows[i]["SurveyDescriptionArabic"]  </td>
+                        </tr>
+                    }
+                    </tbody>
+
+                
+
+
+                <tr>
+                </tr>
+
+
+
+
+            </table>
+        </div>
+    </div>
+</div>

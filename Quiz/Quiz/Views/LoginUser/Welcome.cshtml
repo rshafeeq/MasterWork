@@ -1,0 +1,115 @@
+﻿
+@{
+    ViewBag.Title = "welcome";
+}
+
+<style>
+
+    a {
+        color: white !important;
+        text-decoration: none;
+        background-color: transparent;
+        -webkit-text-decoration-skip: objects;
+    }
+
+        a:hover {
+            color: white !important;
+            text-decoration: underline;
+        }
+</style>
+@if (Session["Username"] != null)
+{
+
+}
+@if (Session["Role"] != null)
+{
+    switch (Session["Role"])
+    {
+        case "Admin":
+            <br />
+            <br />
+            <br />
+            <div class="">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="table-responsive">
+                            @*<h2>Welcome @Session["Fullname"].ToString() </h2>*@
+                            @*<h>Role: @Session["Role"].ToString() </h>*@
+                            @*<h>@Html.ActionLink("Log Out", "Index" , "LoginUser" )</h>*@
+
+                            <table class="table table-bordered ">
+                                <thead>
+                                    <tr>
+                                        <th>Description</th>
+                                        <th>Links</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Users</td>
+                                        <td>
+                                            <button class="btn btn-success">@Html.ActionLink("Manage Users", "Index", "ManageUsers")</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Survey</td>
+                                        <td>
+                                            <button class="btn btn-success">@Html.ActionLink("Manage Quiz", "Index", "ManageQuiz")</button>
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Questions</td>
+                                        <td>
+                                            <button class="btn btn-success">@Html.ActionLink("Upload Questions", "Index", "UploadQuestions")</button>
+                                        </td>
+                                    </tr>
+                                   
+                                   
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            break;
+        case "Coordinator":
+
+            <br />
+            <br />
+            <br />
+            <div class="">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="table-responsive">
+                            @*<h2>Welcome @Session["Fullname"].ToString() </h2>*@
+                            @*<h>Role: @Session["Role"].ToString() </h>*@
+                            @*<h>@Html.ActionLink("Log Out", "Index" , "LoginUser" )</h>*@
+
+                            <table class="table table-bordered ">
+                                <thead>
+                                    <tr>
+                                        <th>Description</th>
+                                        <th>Links</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    <tr>
+                                        <td>Quiz</td>
+                                        <td>
+                                            <button class="btn btn-success">@Html.ActionLink("Go To Quiz", "Index", "ManageQuiz")</button>
+
+                                        </td>
+                                    </tr>
+                                  
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            break;
+        
+    }
+}

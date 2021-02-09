@@ -1,0 +1,38 @@
+﻿
+.table tr td .btn {
+    text-align: left;
+}
+
+.table tr td a {
+    color: #337ab7;
+}
+
+.table tr td a.text-success {
+        color: #0b8a22;
+    }
+
+.modal.bootbox {
+    top: 20%;
+    left: 40%;
+    width: 760px;
+    border: none;
+    background: none;
+    box-shadow: none;
+}
+
+.bg-primary {
+    /*color: #FFF !important;*/
+    background-color: #32c5d2 !important;
+    border-color: #32c5d2 !important;
+}
+
+.bg-primary .two {
+        color: #000 !important;
+    }
+
+   .bg-primary .one, .bg-primary i {
+        color: #fff !important;
+        margin: 0 10px;
+    }
+
+

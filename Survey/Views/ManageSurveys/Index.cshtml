@@ -1,0 +1,89 @@
+﻿@model System.Data.DataTable
+@{
+    ViewBag.Title = "Index";
+}
+
+<style>
+
+    a {
+        color: white!important;
+        text-decoration: none;
+        background-color: transparent;
+        -webkit-text-decoration-skip: objects;
+    }
+
+        a:hover {
+            color: white !important;
+            text-decoration: underline;
+        }
+
+    </style>
+<h2>Manage Surveys</h2>
+<br />
+<br />
+<div>
+    <table>
+    <tr class="col-md-4 ">
+        <td class="btn btn-info">@Html.ActionLink("Add New Survey", "Create", "ManageSurveys")</td>
+      <td>
+          </td>
+        <td class="btn btn-info">@Html.ActionLink("Assign Survey", "Index", "AssignSurvey")</td>
+        </tr></table>
+   </div>
+<br/>
+<br />
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="table-responsive">
+            <table class="table-bordered  table table-condensed">
+                <thead>
+                    <tr>
+                        <th>Survey Title </th>
+                        <th>Start Date</th>
+                        <th>End Date </th>
+                        <th>Status</th>
+                        <th colspan="2" style="text-align:center">Action</th>
+                       
+
+
+                    </tr>
+                </thead>
+                @for (int i = 0; i < Model.Rows.Count; i++)
+                {
+                   
+            <tr class="info">
+                <td>@Model.Rows[i]["SurveyTitle"]  </td>
+                <td>@Model.Rows[i]["SurveyStartDate"]  </td>
+                <td>@Model.Rows[i]["SurveyEndDate"]  </td>
+                <td>@Model.Rows[i]["Active"]  </td>
+                <td >
+                    <button class="btn btn-warning"><a href="@Url.Action("Edit","ManageSurveys",new{@id=Model.Rows[i]["SurveyID"]})" style="color: white !important">Edit</a></button>
+                    </td>
+
+                <td >
+                    <button class="btn btn-danger">@Html.ActionLink("Delete", "Delete", "ManageSurveys", new { @id = Model.Rows[i]["SurveyID"] }, new { onclick = "return confirm('Are sure wants to delete?');" })</button>
+                </td>
+
+                
+            </tr>
+
+                }
+
+
+                <tr>
+                    <td style="color:red">
+                        @if (Request.QueryString["value1"] != null)
+                        {
+                            @Request.QueryString["value1"]
+                        }
+
+                    </td>
+                </tr>
+
+
+
+
+            </table>
+        </div>
+    </div>
+</div>

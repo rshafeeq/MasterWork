@@ -1,0 +1,46 @@
+﻿@model Survey.Models.SurveyQuestions
+
+@{
+    ViewBag.Title = "Index";
+}
+<h4>@Request.QueryString["Title"]</h4>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+    function GetControlIDs() {
+
+        
+       }
+</script>
+<p id="demo"></p>
+<br />
+<br />
+<div>
+    @using (Html.BeginForm("Index", "SurveyQuestions"))
+    {
+        <hr />
+        <dl class="dl-horizontal"></dl>
+        <div>
+            @if (Request.QueryString["Message"] != null)
+            {
+                <div>Thank you For Participating in Survey</div>
+            }
+            
+        </div>
+        <div id="DivDynamic">
+            @if (ViewData["myInnerHtml"].ToString() != null)
+            {
+                @(new HtmlString(ViewData["myInnerHtml"].ToString()))
+            }
+            else
+            {
+
+            }
+            <br />
+            <br />
+           @* <input type="button" id="Submit" name="Submit Survey"  />*@
+            <button class="btn btn-info" name="btnSubmit" >Submit Survey</button>
+        </div>
+    }
+</div>
+

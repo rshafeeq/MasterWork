@@ -1,0 +1,61 @@
+﻿@model System.Data.DataTable
+@{
+    ViewBag.Title = "Index";
+}
+
+<style>
+
+    a {
+        color: white !important;
+        text-decoration: none;
+        background-color: transparent;
+        -webkit-text-decoration-skip: objects;
+    }
+
+        a:hover {
+            color: white !important;
+            text-decoration: underline;
+        }
+</style>
+<h2>Survey Reports</h2>
+<br />
+<br />
+<br />
+<br />
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="table-responsive">
+            <table class="table-bordered  table table-condensed">
+                <thead>
+                    <tr>
+                        <th>Survey Title </th>
+                        <th>Survey Title Arabic</th>
+                        <th colspan="2">Action</th>
+
+                    </tr>
+                </thead>
+                @for (int i = 0; i < Model.Rows.Count; i++)
+                {
+
+                    <tr class="info">
+                        <td>@Model.Rows[i]["SurveyTitle"]  </td>
+                        <td>@Model.Rows[i]["SurveyTitleArabic"]  </td>
+                        <td >
+                            <button class="btn btn-success">
+                                <a href="@Url.Action("CreateExcelFile","SurveyReport",new{@id=Model.Rows[i]["SurveyID"],FormMethod.Post})" style="color: white !important">Export To Excel</a>
+                            </button></td>
+
+
+                    </tr>
+
+                }
+                @*<tr>
+                        <td style="color:red">
+                            @Request.QueryString["value1"]
+                        </td>
+                    </tr>*@
+            </table>
+        </div>
+    </div>
+</div>
+

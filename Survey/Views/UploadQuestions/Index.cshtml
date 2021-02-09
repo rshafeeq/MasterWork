@@ -1,0 +1,113 @@
+﻿@model Survey.Models.ManageQuestions
+@{
+    ViewBag.Title = "Index";
+    <style>
+
+        a {
+            color: white !important;
+            text-decoration: none;
+            background-color: transparent;
+            -webkit-text-decoration-skip: objects;
+        }
+
+            a:hover {
+                color: white !important;
+                text-decoration: underline;
+            }
+    </style>
+    using (Html.BeginForm())
+    {
+
+
+        <h2>Upload Questions</h2>
+
+        <br />
+        <br />
+        <div class="row">
+            <div class="col-md-12 col-sm-6 col-xs-12">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+
+                        Select Survey:&nbsp; @Html.DropDownList("Surveylist", (IEnumerable<SelectListItem>)ViewBag.Surveylist, "--Select--", new { id = "Surveylist" })
+
+
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        @*<label>Select File </label>*@
+
+                        <input class="form-control" type="file" name="postedFile" id="postedFile" />
+                    </div>
+                    <br />
+                    <br />
+                    <div class="col-md-8 col-sm-6 col-xs-12">
+                        <input class="btn btn-primary" id="btnUpload" type="submit" value="Upload" />
+                    </div>
+                </div>
+
+
+
+                <br />
+
+                <a class="btn btn-warning" href="~/Content/SurveyTemplate.xlsx">Download Excel Template</a>
+            </div>
+        </div>
+
+    }
+
+
+<div id="displayMsg">
+    @*@if (TempData["Messages"] != null)
+        {
+
+            <div role="alert" class="alert @TempData["Messages"] ">
+
+                <span> @Html.Raw(TempData["Messages"]) </span>
+                <button aria-label="Close" data-dismiss="alert" class="close" type="button"><span aria-hidden="true">×</span></button>
+            </div>
+        }*@
+
+    @if (Request.QueryString["Message"] != null)
+    {
+        <span class="text-success"> @Html.Raw(Request.QueryString["Message"]) </span><br />
+    }
+    @if (Request.QueryString["MessageFailed"] != null)
+    {
+        <span class="text-danger"> @Html.Raw(Request.QueryString["MessageFailed"]) </span>
+    }
+</div>
+}
+
+@section scripts{
+    <script>
+        
+        $(document).on("click", "#btnUpload", function () {
+            var files = $("#postedFile").get(0).files;
+            var selectSurvey = $("#Surveylist option:selected").val();
+            var formData = new FormData();
+
+
+            formData.append('postedFile', files[0]);
+
+            $.ajax({
+                url: '/UploadQuestions/Index?surveyId=' + selectSurvey,
+                data: formData,
+                type: 'POST',
+                contentType: false,
+                processData: false,
+                success: function (data) {
+                    if (data.Status === 1) {
+                        alert(data.Message);
+                    } else {
+
+                    }
+                }
+            });
+        });
+    </script>
+
+
+
+}

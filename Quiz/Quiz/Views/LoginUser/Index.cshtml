@@ -1,0 +1,106 @@
+﻿@model Quiz.Models.LoginUser
+
+@*@{
+        Layout = null;
+
+
+    }*@
+
+@{
+    Layout = null;
+    ViewBag.Title = "Index";
+}
+
+<link href="~/Content/newstyle/css/newstyle.css" rel="stylesheet" />
+<link href="~/Content/newstyle/css/Loginstylesheet.css" rel="stylesheet" />
+
+
+<header>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar" style="background: rgb(43, 98, 99););">
+        <a class="navbar-brand" href="#"><strong>Preparatory Year Deanship</strong></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+
+                    @*<a class="nav-link" href="@Url.Action("firstloginHome","Login")">@Resources.EmployeeUserResources.loginFirstTime <span class="sr-only">(current)</span></a>*@
+                </li>
+                @*<li class="nav-item">
+                        <a class="nav-link" href="#">@Resources.EmployeeUserResources.forgetPassword</a>
+                    </li>*@
+
+            </ul>
+        </div>
+    </nav>
+    <div class="view intro hm-purple-light"></div>
+</header>
+
+@using (Html.BeginForm())
+{
+
+    @Html.AntiForgeryToken()
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <section class="login-block">
+        @*<h4>Login User</h4>*@
+
+        <div class="container">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="row">
+                <div class="col-md-4 col-sm-4 col-xs-12 login-sec">
+                    <h2 class="text-center">Login Now</h2>
+                    <div class="form-group">
+
+                        @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label " })
+
+                        @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label" })
+
+                        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Login" class="btn btn-login float-right" />
+                    </div>
+                </div>
+
+                <div class="col-md-8 col-sm-8 col-xs-12 banner-sec">
+                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+
+                        <div class="carousel-inner" role="listbox">
+                            <div class="carousel-item active">
+                                <img class="d-block img-fluid " style="height:507px;max-width: 113%;" src="~/Content/Images/Univ2.png" alt="First slide">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <h3 style="color: red">@Html.ViewData["Message"]</h3>
+        </div>
+    </section>
+}
+
+<div>
+    @*@Html.ActionLink("Back to List", "Index")*@
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

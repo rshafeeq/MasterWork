@@ -1,0 +1,113 @@
+﻿@model System.Data.DataTable
+    @{
+    ViewBag.Title = "Index";
+}
+
+<style>
+
+    a {
+        color: white !important;
+        text-decoration: none;
+        background-color: transparent;
+        -webkit-text-decoration-skip: objects;
+    }
+
+        a:hover {
+            color: white !important;
+            text-decoration: underline;
+        }
+</style>
+<style>
+    .delete-section {
+        display: inline;
+    }
+</style>
+<h4>Manage Quiz</h4>
+<br />
+<br />
+<div>
+    <table>
+        <tr class="col-md-4 ">
+
+
+            @if (Session["Role"] != null)
+            {
+                switch (Session["Role"])
+                {
+                    case "Admin":
+            <td class="btn btn-info">
+                @Html.ActionLink("Add New Quiz", "Create", "ManageQuiz")
+            </td>
+                            break;
+
+                            }
+                            }
+                        
+                    </tr>
+    </table>
+</div>
+<br />
+<br />
+
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="table-responsive">
+            <table class="table-bordered  table table-condensed">
+                <thead>
+                    <tr>
+                        <th>Quiz Name </th>
+                        <th>Levels </th>
+
+                        <th colspan="2" style="text-align:center">Action</th>
+
+
+                    </tr>
+                </thead>
+                @if (Session["Role"] != null)
+                {
+                    switch (Session["Role"])
+                    {
+                        case "Admin":
+
+                            for (int i = 0; i < Model.Rows.Count; i++)
+                            {
+                                <tr>
+                                    <td>@Model.Rows[i]["QuizName"]  </td>
+                                    <td>@Model.Rows[i]["NoOfLevels"]  </td>
+
+                                    <td>
+                                        <button class="btn btn-warning"><a href="@Url.Action("Edit", "ManageQuiz", new { @id = Model.Rows[i]["QuizID"] })" style="color: white !important">Edit</a></button>
+                                    </td>
+
+                                    <td>
+                                        <button class="btn btn-danger"> @Html.ActionLink("Delete", "Delete", "ManageQuiz", new { @id = Model.Rows[i]["QuizID"] }, new { onclick = "return confirm('Are sure wants to delete?');" })</button>
+                                    </td>
+
+                                </tr>
+                            }
+                            break;
+                        case "Coordinator":
+                            for (int i = 0; i < Model.Rows.Count; i++)
+                            {
+                                <tr>
+                                    <td>@Model.Rows[i]["QuizName"]  </td>
+                                    <td>@Model.Rows[i]["NoOfLevels"]  </td>
+
+                                    <td>
+                                        <button class="btn btn-warning"><a href="@Url.Action("Index", "Quiz", new { @id = Model.Rows[i]["QuizID"] })" style="color: white !important">Conduct</a></button>
+                                    </td>
+
+                                    
+
+                                </tr>
+                            }
+                            break;
+
+                    }
+                }
+
+
+            </table>
+        </div>
+    </div>
+</div>

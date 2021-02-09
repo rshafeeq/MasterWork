@@ -1,0 +1,716 @@
+﻿html {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-touch-callout: none;
+}
+
+body {
+    font: 13px 'Roboto', Helvetica, sans-serif;
+    color: #000;
+    cursor: default;
+    overflow: scroll;
+    background: #F7F7F7 no-repeat center center fixed;
+    background-size: cover;
+}
+
+.container {
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+.wrapper {
+    width: 96%;
+    margin: 0 auto;
+}
+
+.panel-body {
+    padding: 0px;
+}
+
+.fa-lg {
+    font-size: 1.33333333em;
+    line-height: 18px;
+    vertical-align: -15%;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #777;
+    text-align: center;
+    margin: 0px 0px 0px 0px;
+    position: relative;
+}
+
+.navbar-collapse {
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+.nav > li {
+    position: relative;
+    display: block;
+    float: left;
+}
+
+.file-tree ol.tree li.folder > div > span {
+    padding-right: 8px;
+    padding-left: 15px;
+    cursor: pointer;
+    color: #418dc3;
+    zoom: 130%;
+}
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:focus, .navbar-inverse .navbar-nav > .active > a:hover {
+    color: #fff;
+    width: 398px;
+    background-color: #27ae60;
+    height: 34px;
+    padding: 9px 15px;
+}
+
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+    border: none;
+}
+
+.navbar-inverse {
+    background: none;
+    border: none;
+}
+
+.icon-folder {
+    margin-right: 8px;
+    color: #428bca;
+    zoom: 100%;
+}
+
+.table-bordered {
+    border: 1px solid #ddd;
+    width: 100%;
+}
+
+thead.cf {
+    background: #f1f9ff;
+}
+
+.dropdown-menu > .active > a, .dropdown-menu > .active > a:focus, .dropdown-menu > .active > a:hover {
+    color: #fff !important;
+    text-decoration: none;
+    background-color: #27ae60 !important;
+    outline: 0;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 10000000;
+}
+
+.webix_el_box {
+    position: relative;
+    width: 213px;
+    height: 38px;
+    margin-top: 10px;
+}
+
+.webix_input {
+    padding: 5px 32px 5px 12px;
+    border-radius: 17px;
+    position: absolute;
+}
+
+
+.webix_search {
+    color: #8a8a8a;
+    width: 32px;
+    margin-top: -1px;
+    font-size: 23px;
+    text-align: left;
+    position: absolute;
+    margin: 2px 0px 0px 182px;
+}
+
+.navbar-toggle {
+    position: relative;
+    float: right;
+    padding: 9px 10px;
+    margin-top: 8px;
+    margin-right: 15px;
+    margin-bottom: 8px;
+    background-color: #4CAF50;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.page-header h1 {
+    margin: 0px 40px;
+    padding: 0px;
+    color: #000;
+    font-size: 22px;
+}
+
+.left-arw {
+    float: left;
+    margin-left: 10px;
+}
+
+.new-pull {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border: solid 2px #777;
+    padding: 1px 3px;
+    color: #777;
+    float: left !important;
+}
+
+    .new-pull a {
+        color: #777;
+    }
+
+.folder-box {
+    width: auto;
+    height: auto;
+    background: #fff;
+    float: right;
+    margin-top: 20px;
+    padding: 10px 20px;
+}
+
+    .folder-box ul {
+        list-style: none;
+        margin: 0px;
+        padding: 0px;
+    }
+
+        .folder-box ul li {
+            /* width: 30%; */
+            /*font-size: 24px;*/
+            color: #000;
+            text-align: center;
+        }
+
+            .folder-box ul li a1 {
+                font-size: 24px;
+                color: #000;
+                text-align: center;
+                text-decoration: none;
+            }
+
+            .folder-box ul li span {
+                font-size: 10px;
+                font-family: 'PT Sans',Tahoma;
+                color: #000;
+                font-weight:bold;
+
+
+            }
+
+    .folder-box:hover {
+        text-decoration: none;
+        color: #fff !important;
+        /*background: #27ae60;*/
+        padding: 10px 20px;
+    }
+
+.navbar-header {
+    border-bottom: solid 1px #ccc;
+}
+
+.left-right-icon {
+    margin: 8px 0px;
+    padding: 0px;
+}
+
+/*tree bar*/
+textarea {
+    resize: none;
+}
+
+.file-tree {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    height: auto;
+}
+
+#demo p.well.well-sm {
+    height: 80px;
+}
+
+.file-tree ol.tree li.folder.selected > div {
+    color: #fff;
+    background: #27ae60 !important;
+}
+
+.file-tree ol.tree li.file.selected > div {
+    color: #fff;
+    background: #27ae60 !important;
+}
+/*.file-tree ol.tree li div {
+    margin: 0!important;
+    line-height: 26px!important;
+    cursor: pointer!important;
+	background: #27ae60!important;
+	color: #fff!important;
+}*/
+
+
+@media (min-width: 320px) {
+    .page-header h1 {
+        margin: 0px 40px;
+        padding: 0px;
+        color: #000;
+        font-size: 22px;
+    }
+
+
+    .page-header {
+        padding-bottom: 9px;
+        margin: 10px 0 20px;
+        text-align: center;
+        border-bottom: 1px solid #eee;
+    }
+
+    .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:focus, .navbar-inverse .navbar-nav > .active > a:hover {
+        width: 342px;
+    }
+
+    .folder-box {
+        /*width: 33%;*/
+    }
+
+    .btn-default {
+        color: #333;
+        background-color: #f7f7f7;
+        border-color: #f7f7f7;
+    }
+}
+
+@media (min-width: 850px) {
+
+
+    .page-header {
+        padding: 9px 0px;
+        margin: 0px;
+        border-bottom: 1px solid #eee;
+        background: #579996e8;
+        text-align: left;
+        /*  box-shadow: 0px 2px 10px #666;*/
+    }
+
+        .page-header h1 {
+            margin: 0px 40px;
+            padding: 0px;
+            color: white;
+            font-size: 22px;
+        }
+
+    .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:focus, .navbar-inverse .navbar-nav > .active > a:hover {
+        width: 398px;
+    }
+
+    .folder-box {
+        width: auto;
+    }
+
+
+    .pb-filemng-template {
+        margin-top: 0px;
+        font-family: 'PT Sans',Tahoma;
+        font-size: 14px;
+        color: #666;
+        -webkit-font-smoothing: antialiased;
+        cursor: default;
+        overflow: hidden;
+        border: 0 solid #ddd;
+        /* background-color: #fff; */
+        white-space: normal;
+        -webkit-appearance: none;
+    }
+
+    .pb-filemng-navbar {
+        margin-bottom: 0;
+        margin-left: -15px;
+    }
+
+    .treeview-toggle-btn {
+        margin-left: 15px;
+    }
+
+    .pb-filemng-template-btn {
+        background-color: Transparent;
+        background-repeat: no-repeat;
+        border: none;
+        cursor: pointer;
+        outline: none;
+        color: gray;
+        padding: 0px 13px 0px 13px;
+    }
+
+    .pb-filemng-active {
+        border-bottom: 2px solid #6d97db;
+        color: #5f6977;
+    }
+
+    .pb-filemng-template-btn:hover {
+        color: blue;
+    }
+
+    .pb-filemng-body-folders > img:hover {
+        cursor: pointer;
+    }
+
+    .btn-align {
+        margin-top: 7px;
+    }
+
+    .pb-filemng-template-treeview {
+        border-right: 1px solid gray;
+        background: #f0f3f5;
+        height: 760px;
+        width: 225px;
+    }
+
+    .pb-filemng-folder {
+        color: orange;
+        padding-bottom: 3px;
+    }
+
+    .pb-filemng-paragraphs {
+        margin-top: -20px;
+        text-align: center;
+    }
+
+    .img-responsive {
+        margin: 0 auto;
+    }
+
+    @media (max-width: 767px) {
+
+        .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a, .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:focus, .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:hover {
+            color: #fff;
+            background-color: #080808 !important;
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+
+        .pb-filemng-template-treeview {
+            border-right: none;
+        }
+
+        .page-header h1 {
+            margin: 0px 40px;
+            padding: 0px;
+            color: #000;
+            font-size: 22px;
+        }
+
+
+
+        #options {
+            text-align: center;
+        }
+
+            #options > li {
+                display: inline-block;
+            }
+
+        #pb-filemng-navigation > ul {
+            text-align: center;
+        }
+
+            #pb-filemng-navigation > ul > li {
+                display: inline-block;
+            }
+    }
+
+    /*------------------side nav bar*------------------/
+
+	/* remove outer padding */
+    .main .row {
+        padding: 0px;
+        margin: 0px;
+    }
+
+    /*Remove rounded coners*/
+
+    nav.sidebar.navbar {
+        border-radius: 0px;
+    }
+
+    nav.sidebar, .main {
+        -webkit-transition: margin 200ms ease-out;
+        -moz-transition: margin 200ms ease-out;
+        -o-transition: margin 200ms ease-out;
+        transition: margin 200ms ease-out;
+    }
+
+    /* Add gap to nav and right windows.*/
+    .main {
+        padding: 10px 10px 0 10px;
+    }
+
+    /* .....NavBar: Icon only with coloring/layout.....*/
+
+    /*small/medium side display*/
+    @media (min-width: 768px) {
+
+        /*Allow main to be next to Nav*/
+        .main {
+            position: absolute;
+            width: calc(100% - 40px); /*keeps 100% minus nav size*/
+            margin-left: 40px;
+            float: right;
+        }
+
+        /*lets nav bar to be showed on mouseover*/
+        nav.sidebar:hover + .main {
+            margin-left: 200px;
+        }
+
+        /*Center Brand*/
+        nav.sidebar.navbar.sidebar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
+            margin-left: 0px;
+        }
+        /*Center Brand*/
+        nav.sidebar .navbar-brand, nav.sidebar .navbar-header {
+            text-align: center;
+            width: 100%;
+            margin-left: 0px;
+        }
+
+        /*Center Icons*/
+        nav.sidebar a {
+            padding-right: 13px;
+        }
+
+        /*adds border top to first nav box */
+        nav.sidebar .navbar-nav > li:first-child {
+            border-top: 1px #e5e5e5 solid;
+        }
+
+        /*adds border to bottom nav boxes*/
+        nav.sidebar .navbar-nav > li {
+            border-bottom: 1px #e5e5e5 solid;
+        }
+
+        /* Colors/style dropdown box*/
+        nav.sidebar .navbar-nav .open .dropdown-menu {
+            position: static;
+            float: none;
+            width: auto;
+            margin-top: 0;
+            background-color: #fff;
+            border: 0;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            padding: 10px 0px;
+        }
+
+        /*allows nav box to use 100% width*/
+        nav.sidebar .navbar-collapse, nav.sidebar .container-fluid {
+            padding: 0 0px 0 0px;
+        }
+
+        /*colors dropdown box text */
+        .navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
+            color: #777;
+        }
+
+        /*gives sidebar width/height*/
+        nav.sidebar {
+            width: auto;
+            height: auto;
+            margin-left: 0px;
+            float: left;
+            z-index: 8000;
+            border: none;
+            margin-top: 10px;
+            margin-bottom: 0px;
+        }
+
+            /*give sidebar 100% width;*/
+            nav.sidebar li {
+                width: 100%;
+            }
+
+            /* Move nav to full on mouse over*/
+            nav.sidebar:hover {
+                margin-left: 0px;
+            }
+        /*for hiden things when navbar hidden*/
+        .forAnimate {
+            opacity: 0;
+        }
+    }
+
+
+
+
+    /* .....NavBar: Fully showing nav bar..... */
+
+    @media (min-width: 1330px) {
+
+        /*Allow main to be next to Nav*/
+        .main {
+            width: calc(100% - 200px); /*keeps 100% minus nav size*/
+            margin-left: 200px;
+        }
+
+        /*Show all nav*/
+        nav.sidebar {
+            margin-left: 0px;
+            float: left;
+        }
+            /*Show hidden items on nav*/
+            nav.sidebar .forAnimate {
+                opacity: 1;
+            }
+    }
+
+    nav.sidebar .navbar-nav .open .dropdown-menu > li > a:hover, nav.sidebar .navbar-nav .open .dropdown-menu > li > a:focus {
+        color: #fff;
+        background-color: #27ae60;
+    }
+
+    nav:hover .forAnimate {
+        opacity: 1;
+    }
+
+    section {
+        /*padding-left: 15px;*/
+    }
+
+    /*--------------breadcrumbs css--------------*/
+
+
+    /* Breadcrumbs from http://bootsnipp.com/snippets/featured/triangle-breadcrumbs-arrows */
+    .btn-breadcrumb .btn:not(:last-child):after {
+        content: " ";
+        display: block;
+        width: 0;
+        height: 0;
+        border-top: 17px solid transparent;
+        border-bottom: 17px solid transparent;
+        border-left: 10px solid white;
+        position: absolute;
+        top: 50%;
+        margin-top: -17px;
+        left: 100%;
+        z-index: 3;
+    }
+
+    .btn-breadcrumb .btn:not(:last-child):before {
+        content: " ";
+        display: block;
+        width: 0;
+        height: 0;
+        border-top: 17px solid transparent;
+        border-bottom: 17px solid transparent;
+        border-left: 10px solid rgb(173, 173, 173);
+        position: absolute;
+        top: 50%;
+        margin-top: -17px;
+        margin-left: 1px;
+        left: 100%;
+        z-index: 3;
+    }
+
+    .btn-breadcrumb .btn {
+        padding: 6px 12px 6px 24px;
+    }
+
+        .btn-breadcrumb .btn:first-child {
+            padding: 6px 6px 6px 10px;
+        }
+
+        .btn-breadcrumb .btn:last-child {
+            padding: 6px 18px 6px 24px;
+        }
+
+        /** Default button **/
+        .btn-breadcrumb .btn.btn-default:not(:last-child):after {
+            border-left: 10px solid #fff;
+        }
+
+        .btn-breadcrumb .btn.btn-default:not(:last-child):before {
+            border-left: 10px solid #ccc;
+        }
+
+        .btn-breadcrumb .btn.btn-default:hover:not(:last-child):after {
+            border-left: 10px solid #ebebeb;
+        }
+
+        .btn-breadcrumb .btn.btn-default:hover:not(:last-child):before {
+            border-left: 10px solid #adadad;
+        }
+
+    /* The responsive part */
+
+    .btn-breadcrumb > * > div {
+        /* With less: .text-overflow(); */
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .btn-breadcrumb > *:nth-child(n+2) {
+        display: none;
+    }
+
+    .btn-default {
+        color: #333;
+        background-color: #f7f7f7;
+        border-color: #f7f7f7;
+    }
+
+    /* === For phones =================================== */
+    @media (max-width: 767px) {
+        .btn-breadcrumb > *:nth-last-child(-n+2) {
+            display: block;
+        }
+
+        .btn-breadcrumb > * div {
+            max-width: 60px;
+        }
+
+        .btn-default {
+            color: #333;
+            background-color: #f7f7f7;
+            border-color: #f7f7f7;
+        }
+    }
+
+    /* === For tablets ================================== */
+    @media (min-width: 768px) and (max-width:991px) {
+        .btn-breadcrumb > *:nth-last-child(-n+4) {
+            display: block;
+        }
+
+        .btn-breadcrumb > * div {
+            max-width: 100px;
+        }
+
+        .btn-default {
+            color: #333;
+            background-color: #f7f7f7;
+            border-color: #f7f7f7;
+        }
+    }
+
+    /* === For desktops ================================== */
+    @media (min-width: 992px) {
+        .btn-breadcrumb > *:nth-last-child(-n+6) {
+            display: block;
+        }
+
+        .btn-breadcrumb > * div {
+            max-width: 170px;
+        }
+
+        .btn-default {
+            color: #333;
+            background-color: #f7f7f7;
+            border-color: #f7f7f7;
+        }
+    }

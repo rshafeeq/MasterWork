@@ -1,0 +1,378 @@
+﻿
+.SlideBackGround {
+    height: 750px;
+    width: 1100px;
+    /*position: fixed;
+    margin: 30px 30px 80px 80px;*/
+    background-color: white;
+   
+    background-image: url('../../Images/frame.png');
+    background-size: 1100px 750px;
+    background-repeat: no-repeat;
+    z-index: 2;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../Images/frame.png',sizingMethod='scale');
+    -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='frame.png',sizingMethod='scale')";
+}
+
+.MiddlePart {
+    height: 245px;
+    width: 870px;
+    position: fixed;
+    left: 415px;
+    top: 270px;
+
+    background-image: url('../images/middle_part.png');
+    background-size: 870px 245px;
+    background-repeat: no-repeat;
+    z-index: 5;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/middle_part.png',sizingMethod='scale');
+    -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='middle_part.png',sizingMethod='scale')";
+}
+
+.Seal {
+    height: 90px;
+    width: 90px;
+    position: fixed;
+    left: 800px;
+    top: 800px;
+
+    background-image: url('../images/sigill.png');
+    background-size: 90px 90px;
+    background-repeat: no-repeat;
+    z-index: 5;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/sigill.png',sizingMethod='scale');
+    -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='sigill.png',sizingMethod='scale')";
+}
+
+.Ribbon {
+    width: 60px;
+    height: 90px;
+    position: fixed;
+    left: 800px;
+    top: 900px;
+
+    background-image: url('../images/band.png');
+    background-size: 60px 90px;
+    background-repeat: no-repeat;
+    z-index: 5;
+    /*filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/band.png',sizingMethod='scale');*/
+    /*-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='band.png',sizingMethod='scale')";*/
+}
+
+        .Signature {
+            width: 250px;
+            height: 90px;
+            position: fixed;
+            left: 360px;
+            top: 890px;
+            /*background-image: url(http://dotnet.ondev.com/ft63/content/sections/certificates/upload/krogarnase/signature.png);*/
+            background-size: 180px 90px;
+            background-repeat: no-repeat;
+            font-size:26px;
+              color: #000;
+            z-index: 11;
+            filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://dotnet.ondev.com/ft63/content/sections/certificates/upload/krogarnase/signature.png',sizingMethod='scale');
+            -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='signature.png',sizingMethod='scale')";
+        }
+
+        .DateLine {
+            width: 300px;
+            position: fixed;
+            left: 280px;
+            top: 870px;
+           border-color:#4098D6;
+        }
+
+        .ExaminerLine {
+            width: 300px;
+            position: fixed;
+            left: 300px;
+            top: 920px;
+           border-color:#4098D6;
+
+        }
+
+        .ExaminerText {
+            width: 270px;
+            position: fixed;
+            left: 330px;
+            top: 945px;
+               font-size:26px;
+            color: #000;
+            z-index: 11;
+        }
+
+        .DateText {
+            width: 270px;
+            position: fixed;
+            left: 400px;
+            top: 895px;
+               font-size:26px;
+            z-index: 11;
+            color: #8B7B67;
+        }
+
+        .ParagraphSmall {
+            height: 200px;
+            width:970px;
+            position: fixed;
+           
+            left: 380px;
+            top: 610px;
+            font-size: 28px;
+            text-align: center;
+            direction:rtl;
+            z-index: 11;
+            color: #000;
+        }
+        /*.ParagraphSmall1 {
+            height: 200px;
+            width:970px;
+            position: fixed;
+           
+            left: 380px;
+            top: 600px;
+            font-size: 32px;
+            text-align: center;
+            direction:rtl;
+            z-index: 11;
+            color: #8B7B67;
+        }*/
+
+        .ParagraphMedium {
+            height: 200px;
+            width: 420px;
+            position: fixed;
+            left: 645px;
+            top: 325px;
+            font-size: 18px;
+            text-align: center;
+            z-index: 11;
+            color: #8B7B67;
+        }
+
+.HeadingLarge {
+    height: 200px;
+    width: 600px;
+    position: fixed;
+    left: 630px;
+    top: 375px;
+    font-size: 46px;
+    z-index: 11;
+    color: #000;
+    float:right;
+  
+    /*background-image: url('../../themes/images/logo-1 (1).jpg');*/
+}
+.HeadingLarge1 {
+    height: 100px;
+    width: 600px;
+    position: fixed;
+    left:160px;
+    top: 180px;
+    font-size: 46px;
+    z-index: 11;
+    color: #000;
+    zoom:80%
+    
+  
+  
+    /*background-image: url('../../themes/images/logo-1 (1).jpg');*/
+}
+.studentid {
+    height: 100px;
+    width: 235px;
+    position: fixed;
+    right: 117px;
+    top: 170px;
+    font-size: 28px;
+    z-index: 11;
+    color: #000;
+    font:bolder;
+  
+  
+    /*background-image: url('../../themes/images/logo-1 (1).jpg');*/
+}
+.studentid2 {
+    height: 100px;
+    width: 235px;
+    position: fixed;
+    right: 87px;
+    top: 260px;
+    font-size: 30px;
+    z-index: 11;
+    color: #000;
+    font:bolder;
+  
+  
+    /*background-image: url('../../themes/images/logo-1 (1).jpg');*/
+}
+.studentidno {
+    height: 100px;
+    width: 350px;
+    position: fixed;
+    right: 20px;
+    top: 205px;
+    font-size: 26px;
+    z-index: 11;
+    color: #8B7B67;
+    font:bolder;
+  
+  
+    /*background-image: url('../../themes/images/logo-1 (1).jpg');*/
+}
+.departmentname {
+    height: 100px;
+    width: 230px;
+    position: fixed;
+    right: 65px;
+    top: 215px;
+    font-size: 26px;
+    z-index: 11;
+    color: #000;
+    font:bolder;
+  
+  
+    /*background-image: url('../../themes/images/logo-1 (1).jpg');*/
+}
+.departmentname1 {
+    height: 100px;
+    width: 350px;
+    position: fixed;
+    right: 20px;
+    top: 270px;
+    font-size: 26px;
+    z-index: 11;
+    color: #8B7B67;
+    font:bolder;
+  
+  
+    /*background-image: url('../../themes/images/logo-1 (1).jpg');*/
+}
+.activitytext {
+    height: 100px;
+    width: 500px;
+    position: fixed;
+    left: 280px;
+    top: 210px;
+    font-size: 26px;
+    z-index: 11;
+    color: #8B7B67;
+    font:bolder;
+  
+  
+    /*background-image: url('../../themes/images/logo-1 (1).jpg');*/
+}
+.activityname {
+    height: 100px;
+    width: 620px;
+    position: fixed;
+    left: 150px;
+    top: 210px;
+    font-size: 26px;
+    z-index: 11;
+    color: #8B7B67;
+    font:bolder;
+  
+  
+    /*background-image: url('../../themes/images/logo-1 (1).jpg');*/
+}
+.activitydate {
+    height: 100px;
+    width: 600px;
+    position: fixed;
+    left: 170px;
+    top: 260px;
+    font-size: 26px;
+    z-index: 11;
+    color: #8B7B67;
+    font:bolder;
+  
+  
+    /*background-image: url('../../themes/images/logo-1 (1).jpg');*/
+}
+.activitydaytext {
+    height: 100px;
+    width: 620px;
+    position: fixed;
+    left: 280px;
+    top: 265px;
+    font-size: 26px;
+    z-index: 11;
+    color: #8B7B67;
+    font:bolder;
+  
+  
+    /*background-image: url('../../themes/images/logo-1 (1).jpg');*/
+}
+.activityday {
+    height: 100px;
+    width: 620px;
+    position: fixed;
+    left: 150px;
+    top: 265px;
+    font-size: 26px;
+    z-index: 11;
+    color: #8B7B67;
+    font:bolder;
+    
+  
+  
+    /*background-image: url('../../themes/images/logo-1 (1).jpg');*/
+}
+
+        .MiddleLine {
+            width: 890px;
+            position: fixed;
+            left: 410px;
+            top: 585px;
+            z-index: 11;
+                 border-color:#4098D6;
+        }
+
+        .StudentName {
+            font-weight: bold;
+            height: 100px;
+            width: 720px;
+            position: fixed;
+            left: 500px;
+            top: 345px;
+            font-size: 30px;
+            text-align: center;
+            z-index: 11;
+            color: #000;
+        }
+        .StudentName1 {
+            /*font-weight: bold;*/
+            height: 200px;
+            width: 720px;
+            position: fixed;
+            left: 480px;
+            top: 518px;
+            font-size: 60px;
+            text-align: center;
+            z-index: 11;
+            color: #000;
+        }
+        .CompletionDate {
+            position: fixed;
+            left: 340px;
+            top: 840px;
+            font-size:26px;
+            z-index: 11;
+            color: #8B7B67;
+            text-align: center;
+        }
+       
+        /*.logo {
+            margin: 0 auto;
+            float: right;
+            margin-right: 1px;
+            
+            width: 40px;
+            /*margin-right:16px*/
+        }*/
+
+
+
+ 

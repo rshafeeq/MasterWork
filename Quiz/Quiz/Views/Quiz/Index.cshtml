@@ -1,0 +1,777 @@
+﻿@model Quiz.Models.RadioButtonLiatModel
+@{
+    Layout = null;
+}
+@using (Html.BeginForm())
+{
+    <!doctype html>
+<html lang="">
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Training</title>
+
+
+
+    @Styles.Render("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css")
+    @Styles.Render("https://fonts.googleapis.com/icon?family=Material+Icons")
+    @Styles.Render("~/Content/assets/css/MaterialIcons.css")
+    @Styles.Render("~/Content/assets/Arabic/bootstraparabic.css")
+    @Styles.Render("~/Content/assets/Arabic/adminarabic.css")
+    @Styles.Render("~/Content/assets/Arabic/Portletarabic.css")
+    @Styles.Render("~/Content/assets/Arabic/Propellerarabic.css")
+    @Styles.Render("~/Content/assets/Arabic/plugindatatablearabic.css")
+    @Styles.Render("~/Content/datatable/rtl/plugins/datatables/datatables.min.css")
+    @Styles.Render("~/Content/datatable/rtl/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css")
+    @Styles.Render("~/Content/assets/css/propeller.min.css")
+    @Styles.Render("~/Content/assets/stylesheets/themear.css")
+    @Styles.Render("~/Content/lib/font-awesome/css/font-awesome.css")
+    @Styles.Render("~/Content/font-awesome/css/font-awesome.min.css")
+    @Styles.Render("~/Content/assets/stylesheets/JF-FLAT.css")
+    @Styles.Render("~/Content/assets/stylesheets/tabs.css")
+    }
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <style>
+        ul.a {
+            counter-reset: li;
+            list-style: none;
+            font-weight: bold;
+            padding: 0 20px;
+            margin-left: 5px;
+            text-shadow: 0 1px 0 rgba(255,255,255,.5);
+            text-align: right;
+        }
+
+        .MainDiv ul li {
+            width: 100%;
+            max-height: 400px;
+        }
+
+        .rounded-list span {
+            position: relative;
+            display: block;
+            padding: .4em;
+            padding-right: 32px;
+            margin: .5em;
+            background: rgba(221, 221, 221, 0.7);
+            color: #000000;
+            text-decoration: none;
+            transition: all .3s ease-out;
+            direction: rtl;
+            background-color: rgba(203, 224, 239, 0.67);
+            opacity: 0.6;
+            font-size: 18px;
+        }
+
+            .rounded-list span:hover {
+                direction: rtl;
+                background: rgba(238, 238, 238, 0.7);
+                background-color: #FFFFFF;
+                color: #000000;
+                font-size: 18px;
+                opacity: 0.9;
+                margin-right: 15px;
+            }
+
+                .rounded-list span:hover:before {
+                    direction: rtl;
+                    transform: scale(1.1,1.1) rotate(360deg);
+                    -ms-transform: scale(1.1,1.1) rotate(360deg);
+                    -webkit-transform: scale(1.1,1.1) rotate(360deg);
+                    -o-transform: scale(1.1,1.1) rotate(3600deg);
+                    -moz-transform: scale(1.1,1.1) rotate(360deg);
+                }
+
+            .rounded-list span:before {
+                content: counter(li);
+                counter-increment: li;
+                position: absolute;
+                right: -1.3em;
+                top: 50%;
+                margin-top: -1.3em;
+                background: rgba(74, 194, 88, 0.4);
+                height: 2em;
+                width: 2em;
+                line-height: 2em;
+                border: .3em solid rgba(255, 255, 255, 0.7);
+                text-align: center;
+                font-weight: bold;
+                border-radius: 2em;
+                transition: all .5s ease-in-out;
+                direction: rtl;
+                background-color: #0080FF;
+                opacity: 0.8;
+                color: White;
+            }
+
+        a.blue:active {
+            color: #0000ff;
+            background: #ffffff;
+            font-weight: bold;
+        }
+
+        a.blue:visited {
+            color: #0000ff;
+            background: #ffffff;
+            font-weight: bold;
+        }
+
+        a.blue:hover {
+            color: #0000ff;
+            background: #ffffff;
+            font-weight: bolder;
+            margin-right: 10px;
+        }
+
+        .circleBase {
+            border-radius: 50%;
+            behavior: url(PIE.htc); /* remove if you don't care about IE8 */
+        }
+
+        .type1 {
+            width: 100px;
+            height: 100px;
+            background: yellow;
+            border: 3px solid red;
+        }
+
+        .type2 {
+            width: 50px;
+            height: 50px;
+            background: #ccc;
+            border: 3px solid #000;
+        }
+
+        .type3 {
+            width: 500px;
+            height: 500px;
+            background: aqua;
+            border: 30px solid blue;
+        }
+
+        #outer {
+            width: 200px;
+            height: 200px;
+            border-radius: 200px;
+            overflow: hidden;
+            position: relative;
+            bottom: 228px;
+        }
+
+        .video {
+            position: relative;
+            left: 0;
+            top: 0;
+            opacity: 1;
+        }
+
+        .container {
+            display: block;
+            position: relative;
+            padding-left: 40px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            font-size: 32px;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            text-align: left;
+        }
+
+            /* Hide the browser's default radio button */
+            .container input {
+                position: absolute;
+                opacity: 0;
+                cursor: pointer;
+            }
+
+        /* Create a custom radio button */
+        .checkmark {
+            position: absolute;
+            top: 19px;
+            left: 0;
+            height: 25px;
+            width: 25px;
+            background-color: #eee;
+            border-radius: 50%;
+            text-align: left;
+        }
+
+        /* On mouse-over, add a grey background color */
+        .container:hover input ~ .checkmark {
+            background-color: #ccc;
+        }
+
+        /* When the radio button is checked, add a blue background */
+        .container input:checked ~ .checkmark {
+            background-color: #2196F3;
+        }
+
+        /* Create the indicator (the dot/circle - hidden when not checked) */
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+
+        /* Show the indicator (dot/circle) when checked */
+        .container input:checked ~ .checkmark:after {
+            display: block;
+            text-decoration: dashed;
+        }
+
+        /* Style the indicator (dot/circle) */
+        .container .checkmark:after {
+            top: 9px;
+            left: 9px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: white;
+        }
+
+        input:checked {
+            height: 50px;
+            width: 50px;
+        }
+
+        .float-container {
+            border: 3px solid #fff;
+            padding: 20px;
+        }
+
+        .float-child {
+            width: 50%;
+            float: left;
+            padding: 20px;
+            border: 2px solid red;
+        }
+    </style>
+
+
+    @*}*@
+
+</head>
+<body>
+    <div>
+
+    </div>
+    <div id="content" class="pmd-content inner-page" style="margin-left:0px">
+        <div class="container-fluid full-width-container about" style="max-width:1590px">
+
+            <div class="row component-section" style="border: 5px solid rgb(51, 122, 183);
+box-shadow: 0 10px 30px -12px rgba(0,0,0,.42), 0 4px 25px 0 rgba(0,0,0,.12), 0 8px 10px -5px rgba(0,0,0,.2);">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+
+                    <!-- responsive table example -->
+                    <div class="pmd-card pmd-z-depth pmd-card-custom-view pmd-card-body" style="direction:ltr">
+
+
+                        <div class="header">
+
+                            <div class="col-md-4 col-sm-4 col-xs-12">
+                                <div class="logo">
+                                    <img src="~/Content/assets/images/kfu-logo.png" />
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 col-sm-4 col-xs-12">
+                            </div>
+                            <div class="col-md-4 col-sm-4 col-xs-12">
+                                <h3 class="page-title" style="color:white;text-align:center;margin-top:50px">
+                                    King Faisal University
+                                    <br />
+                                    Preparatory Year Deanship
+                                </h3>
+                            </div>
+
+
+
+                        </div>
+
+                        <div class="main-content">
+                            <br />
+                            <h1 style="        font-weight: bolder;
+        font-size: 35px;
+        text-align: center;
+        color: #fafcfb;
+        box-shadow: 0 10px 30px -12px rgba(0,0,0,.42), 0 4px 25px 0 rgba(0,0,0,.12), 0 8px 10px -5px rgba(0,0,0,.2);
+        border-radius: 3px;
+        padding: 15px;
+        border: solid 1px #337ab7;
+        background: rgb(43, 98, 99)">
+                                Quiz 1 Level 1
+                            </h1>
+                            <div class="container">
+                                <div class="row">
+
+                                    <section class="row component-section">
+                                        <div class="wizard ">
+                                            <div class="wizard-inner">
+
+                                                <div class="connecting-line"></div>
+                                                <ul class="nav nav-tabs" role="tablist">
+                                                    <li role="presentation" >
+                                                        @*<label id="team1" data-toggle="tab" aria-controls="step1" role="tab">
+                                                                <span class="round-tab">
+                                                                    Score
+                                                                </span>
+                                                            </label>*@
+                                                        <a id="team1" href="#" data-toggle="tab" aria-controls="step1" role="tab">
+                                                            <span class="round-tab" id="score1">
+                                                                @ViewData["team1"]
+
+                                                            </span>
+                                                        </a>
+                                                        <a id="teamOne" href="#step1" data-toggle="tab" aria-controls="step1" role="tab" onclick="ShowQuestion()">
+                                                            <span class="round-tab">
+                                                                Team 1
+                                                            </span>
+                                                        </a>
+                                                    </li>
+
+                                                    <li role="presentation">
+                                                        @*<label id="team2" data-toggle="tab" aria-controls="step2" role="tab">
+                                                                <span class="round-tab">
+                                                                    Score
+                                                                </span>
+                                                            </label>*@
+                                                        <a id="team2" href="#" data-toggle="tab" aria-controls="" role="tab">
+                                                            <span class="round-tab">
+                                                                <label id="score2" title="Test">@ViewData["team2"]</label>
+                                                            </span>
+                                                        </a>
+                                                        <a id="teamTwo" href="#step2" data-toggle="tab" aria-controls="step2" role="tab" onclick="ShowQuestion()">
+                                                            <span class="round-tab">
+                                                                Team 2
+                                                            </span>
+                                                        </a>
+                                                    </li>
+
+                                                    <li role="presentation">
+                                                        @*<label id="team3" data-toggle="tab" aria-controls="step3" role="tab">
+                                                                <span class="round-tab">
+                                                                    Score
+                                                                </span>
+                                                            </label>*@
+                                                        <a id="team3" href="#" data-toggle="tab" aria-controls="step3" role="tab">
+                                                            <span class="round-tab">
+                                                                <label id="score3" title="Test">@ViewData["team3"]</label>
+                                                            </span>
+                                                        </a>
+                                                        <a id="teamThree" href="#step3" data-toggle="tab" aria-controls="step3" role="tab" onclick="ShowQuestion()">
+                                                            <span class="round-tab">
+                                                                Team 3
+                                                            </span>
+                                                        </a>
+                                                    </li>
+                                                    <li role="presentation">
+                                                        @*<label id="team4" data-toggle="tab" aria-controls="step3" role="tab">
+                                                                <span class="round-tab">
+                                                                    Score
+                                                                </span>
+                                                            </label>*@
+                                                        <a id="team4" href="#step4" data-toggle="tab" aria-controls="step3" role="tab">
+                                                            <span class="round-tab">
+                                                                <label id="score4" title="Test">@ViewData["team4"]</label>
+                                                            </span>
+                                                        </a>
+                                                        <a id="teamFour" href="#step4" data-toggle="tab" aria-controls="step3" role="tab" onclick="ShowQuestion()">
+                                                            <span class="round-tab">
+                                                                Team 4
+                                                            </span>
+                                                        </a>
+                                                    </li>
+
+                                                </ul>
+                                            </div>
+                                            <div id="displayMsg">
+
+                                            </div>
+
+
+                                            <div class="tab-content">
+                                                <div class="tab-pane active" role="tabpanel" id="step1">
+
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <div class="">
+                                                                @if (!string.IsNullOrEmpty(Request.QueryString["change"]))
+                                                                {
+                                                                    <div id="divQuestion" class="group-fields clearfix row">
+                                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                                                                            <div class="form-group pmd-textfield">
+
+                                                                                <h2>
+                                                                                    Q1: @Model.Question
+                                                                                </h2>
+
+                                                                                @foreach (var item in Model.RadioButtonListData)
+
+                                                                                {<h2>
+
+                                                                                        <label class="container" id=@item.Value>
+                                                                                            <br /> <input type="radio" id="@item.Value" value="@item.correctAnswer" name=@item.Id />@item.Value
+
+                                                                                            <span class="checkmark"></span>
+                                                                                        </label>
+                                                                                    </h2>
+                                                                                }
+
+
+                                                                                <div style="text-align:right;float:right" id=outer>
+                                                                                    <video class="video" id="myVideo" width="200">
+                                                                                        <source src="~/Content/60Seconds.webm" type="video/webm" />
+                                                                                    </video>
+
+                                                                                    <button id="start" style="width:200px;height:89px;display:none;background-color:#4caf50" onclick="playVid()" type="button"><i class="fa fa-play"></i></button>
+                                                                                    <button id="stop" style="width:200px;height:89px;background-color:red" onclick="pauseVid()" type="button"><i class="fa fa-pause"></i></button>
+                                                                                </div>
+
+
+
+                                                                                <br />
+                                                                                <div style="text-align:left">
+                                                                                    <button id="btnChangeQ" style="width:150px;height:40px" class="btn btn-primary-g" type="button" onclick="ChangeQuestion()">Change Question</button>
+                                                                                    <button id="btnRemoveO" style="width:150px;height:40px" class="btn btn-primary-g" type="button" onclick="RemoveOptions()">Remove Options</button>
+                                                                                    <button id="ShowAnswer" style="width:150px;height:40px;display:none" class="btn btn-primary-g" type="button" onclick="ShowCorrectAnswer()">Show Answer</button>
+                                                                                    <button id="btnSubmit" style="width:100px;height:40px" class="btn btn-primary-g" type="button" onclick="handleChange1()">Submit</button>
+                                                                                    <button id="btnSubmitFinal" style="width:100px;height:40px;display:none" class="btn btn-primary-g" type="button" onclick="SubmitFinal()">Submit</button>
+                                                                                </div>
+                                                                                <div style="text-align:left">
+
+                                                                                </div>
+
+                                                                                <br />
+
+
+                                                                            </div>
+                                                                            <br />
+                                                                        </div>
+                                                                    </div>
+                                                                }
+                                                                else
+                                                                {
+                                                                    <div id="divQuestion" style="display:none" class="group-fields clearfix row">
+                                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                                                                            <div class="form-group pmd-textfield">
+
+                                                                                <h2>
+                                                                                    Q1: @Model.Question
+                                                                                </h2>
+
+                                                                                @foreach (var item in Model.RadioButtonListData)
+
+                                                                                {<h2>
+
+                                                                                        <label class="container" id=@item.Value>
+                                                                                            <br /> <input type="radio" id="@item.Value" value="@item.correctAnswer" name=@item.Id />@item.Value
+
+                                                                                            <span class="checkmark"></span>
+                                                                                        </label>
+                                                                                    </h2>
+                                                                                }
+
+
+                                                                                <div style="text-align:right;float:right" id=outer>
+                                                                                    <video class="video" id="myVideo" width="200">
+                                                                                        <source src="~/Content/60Seconds.webm" type="video/webm" />
+                                                                                    </video>
+
+                                                                                    <button id="start" style="width:200px;height:89px;display:none;background-color:#4caf50" onclick="playVid()" type="button"><i class="fa fa-play"></i></button>
+                                                                                    <button id="stop" style="width:200px;height:89px;background-color:red" onclick="pauseVid()" type="button"><i class="fa fa-pause"></i></button>
+                                                                                </div>
+
+
+
+                                                                                <br />
+                                                                                <div style="text-align:left">
+                                                                                    <span id="ShowCorrect"></span>
+                                                                                    <button id="btnChangeQ" style="width:150px;height:40px" class="btn btn-primary-g" type="button" onclick="ChangeQuestion()">Change Question</button>
+                                                                                    <button id="btnRemoveO" style="width:150px;height:40px" class="btn btn-primary-g" type="button" onclick="RemoveOptions()">Remove Options</button>
+                                                                                    <button id="ShowAnswer" style="width:150px;height:40px;display:none" class="btn btn-primary-g" type="button" onclick="ShowCorrectAnswer()">Show Answer</button>
+                                                                                    <button id="btnSubmit" style="width:100px;height:40px" class="btn btn-primary-g" type="button" onclick="handleChange1()">Submit</button>
+                                                                                    <button id="btnSubmitFinal" style="width:100px;height:40px;display:none" class="btn btn-primary-g" type="button" onclick="SubmitFinal()" >Submit</button>
+
+                                                                                </div>
+                                                                                <div style="text-align:left">
+
+                                                                                </div>
+
+                                                                                <br />
+
+
+                                                                            </div>
+                                                                            <br />
+
+
+
+
+                                                                        </div>
+                                                                    </div>
+                                                                }
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-5 col-sm-5 col-xs-12">
+                                                    </div>
+                                                    @*<ul class="list-inline pull-right">
+
+                                                            <li><button type="button" class="btn btn-primary next-step">Next</button></li>
+                                                        </ul>*@
+                                                </div>
+                                            </div>
+                                            <div class="clearfix"></div>
+
+                                            @*</form>*@
+                                        </div>
+                                    </section>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/Content/assets/js/jquery-1.12.2.min.js"></script>
+    <script src="~/Content/assets/js/bootstrap.min.js"></script>
+    <script src="~/Content/assets/js/propeller.min.js"></script>
+    <script>
+
+
+
+
+        var vid = document.getElementById("myVideo");
+        var start = document.getElementById("start");
+        var stop = document.getElementById("stop");
+
+        function playVid() {
+            vid.play();
+            start.style.display = "none";
+            stop.style.display = "block";
+        }
+
+        function pauseVid() {
+            vid.pause();
+            stop.style.display = "none";
+            start.style.display = "block";
+        }
+        document.getElementById('myVideo').addEventListener('ended', myHandler, false);
+        function myHandler(e) {
+            document.getElementById('answer').setAttribute('disabled', true);
+        }
+
+        function ShowQuestion() {
+
+            var x = document.getElementById('divQuestion');
+
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+
+            vid.play();
+
+        }
+        
+
+        function RemoveOptions() {
+
+            var options = document.getElementsByName('inlineRadio1');
+            var count = 0;
+            for (var x = 0; x < 4; x++) {
+
+                if (options[x].value == options[x].id) {
+
+                    x = x = 1;
+                }
+                else {
+                    count = count + 1;
+                    if (count == 3) {
+                        break
+                    }
+                    else {
+                        document.getElementById(options[x].id).style.display = 'none';
+                    }
+
+                }
+            }
+        }
+
+
+        function handleChange1() {
+            vid.pause();
+            stop.style.display = "none";
+            start.style.display = "block";
+            var ShowAnswer = document.getElementById('ShowAnswer');
+            var submit = document.getElementById('btnSubmit');
+            var btnSubmitFinal = document.getElementById('btnSubmitFinal');
+            var btnChangeQ = document.getElementById('btnChangeQ');
+            var btnRemoveO = document.getElementById('btnRemoveO');
+            var ShowCorrect = document.getElementById('ShowCorrect');
+
+            var score1 = document.getElementById('score1');
+            var score = parseInt(document.getElementById('score1').innerText);
+            var ischecked = document.getElementsByName('inlineRadio1');
+
+            var checkRadio = document.querySelector(
+                'input[name="inlineRadio1"]:checked');
+            if (checkRadio != null) {
+                for (var x = 0; x < ischecked.length; x++) {
+
+                    if (ischecked[x].id == ischecked[x].value) {
+                        //document.getElementById(ischecked[x].id).style.color = 'green';
+                        if (ischecked[x].checked) {
+                            score = score + 10;
+                            ShowAnswer.style.display = 'none';
+                            ShowCorrect.textContent = 'Is a wright Answer';
+                            ShowCorrect.style.color = 'green';
+                        }
+                        else {
+                            ShowCorrect.textContent = 'Is a Wrong  Answer';
+                            ShowCorrect.style.color = 'red';
+                            ShowAnswer.style.display = 'block';
+                        }
+
+
+                    }
+                    else {
+                        //document.getElementById(ischecked[x].id).style.color = 'red';
+                         score= score;
+                    }
+                }
+                score1.textContent = score;
+                btnChangeQ.style.display = 'none';
+                btnRemoveO.style.display = 'none';
+                submit.style.display = 'none';
+
+                btnSubmitFinal.style.display = 'block';
+            }
+            else {
+                alert('Select One Option');
+            }
+        }
+
+        function ShowCorrectAnswer() {
+
+
+            var ShowAnswer = document.getElementById('ShowAnswer');
+            var submit = document.getElementById('btnSubmit');
+
+            var btnChangeQ = document.getElementById('btnChangeQ');
+            var btnRemoveO = document.getElementById('btnRemoveO');
+            var ShowCorrect = document.getElementById('ShowCorrect');
+
+
+            var ischecked = document.getElementsByName('inlineRadio1');
+
+            var checkRadio = document.querySelector(
+                'input[name="inlineRadio1"]:checked');
+            if (checkRadio != null) {
+                for (var x = 0; x < ischecked.length; x++) {
+
+                    if (ischecked[x].id == ischecked[x].value) {
+                        document.getElementById(ischecked[x].id).style.color = 'green';
+                        ShowCorrect.textContent = ischecked[x].value + ' is Wright Answer';
+                        ShowCorrect.style.color = 'green';
+
+                    }
+                    else {
+                        document.getElementById(ischecked[x].id).style.color = 'red';
+                    }
+                }
+
+                btnChangeQ.style.display = 'none';
+                btnRemoveO.style.display = 'none';
+                ShowAnswer.style.display = 'none';
+                submit.style.display = 'none';
+                btnSubmitFinal.style.display = 'block';
+            }
+            else {
+                alert('Selet One option');
+            }
+
+
+
+        }
+        function ChangeQuestion() {
+            var press = confirm("Are you Sure you want to change the question!");
+            if (press == true) {
+                window.location.href = '/quiz/Index/' + @Convert.ToInt32(Session["QuizID"]) +'?change=true';
+            }
+            else {
+
+            }
+
+        }
+        function SubmitFinal() {
+
+            var ischecked = document.getElementsByName('inlineRadio1');
+            var TeamId = document.getElementById("");
+            var checkRadio = document.querySelector(
+                'input[name="inlineRadio1"]:checked');
+            var SelectedOption;
+            if (checkRadio != null) {
+                for (var x = 0; x < ischecked.length; x++) {
+
+                        if (ischecked[x].checked) {
+                            SelectedOption = ischecked[x].id;
+                        }
+                }
+            }
+            //var href = document.querySelector('a').id;
+            var teamID = document.querySelector('a[aria-expanded= "true"]').getAttribute('id');
+
+           window.location.href = '/quiz/Index/' +@Session["QuizID"]+'?QuestionId=' +@Session["QuestionId"] + '&teamid=' + teamID + '&answer=' + SelectedOption;
+        }
+        function setTarget(target) {
+            debugger;
+            $('#targetGroup').val(target);
+        }
+        $(document).ready(function () {
+            //Initialize tooltips
+            $('.nav-tabs > li a[title]').tooltip();
+
+            //Wizard
+            $('a[data-toggle="tab"]').on('show.bs.tab', function (e) {
+
+                var $target = $(e.target);
+
+                if ($target.parent().hasClass('disabled')) {
+                    return false;
+                }
+            });
+            $(".next-step").click(function (e) {
+
+                var $active = $('.wizard .nav-tabs li.active');
+                $active.next().removeClass('disabled');
+                nextTab($active);
+
+            });
+            $(".prev-step").click(function (e) {
+
+                var $active = $('.wizard .nav-tabs li.active');
+                prevTab($active);
+
+            });
+        });
+        function nextTab(elem) {
+            $(elem).next().find('a[data-toggle="tab"]').click();
+        }
+        function prevTab(elem) {
+            $(elem).prev().find('a[data-toggle="tab"]').click();
+        }
+    </script>
+</body>
+</html>
+}
